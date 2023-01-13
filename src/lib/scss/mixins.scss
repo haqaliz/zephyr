@@ -1,0 +1,54 @@
+// textbox placeholder color
+@mixin placeholder($color) {
+	$items: '::placeholder', ':-ms-input-placeholder', '::-ms-input-placeholder';
+	@each $item in $items {
+		&#{$item} {
+			opacity: 1;
+			color: $color;
+		}
+	}
+}
+
+// Browser Compatibility
+@mixin property-with-prefix($prop, $value) {
+	-webkit-#{$prop}: #{$value};
+	-moz-#{$prop}: #{$value};
+	-ms-#{$prop}: #{$value};
+	-o-#{$prop}: #{$value};
+	#{$prop}: #{$value};
+}
+
+// Transition
+@mixin transition($attr, $duration, $timing-function) {
+	@include property-with-prefix(transition, $attr $duration $timing-function);
+}
+
+// Keyframe Animation
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+// Responsive Design
+@mixin breakpoint($point) {
+	@if $point == large {
+		@media only screen and (min-width: 1366px) {
+			@content;
+		}
+	} @else if $point == desktop {
+		@media only screen and (min-width: 1024px) {
+			@content;
+		}
+	} @else if $point == tablet {
+		@media only screen and (min-width: 600px) {
+			@content;
+		}
+	}
+}

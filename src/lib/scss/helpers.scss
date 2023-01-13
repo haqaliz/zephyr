@@ -1,0 +1,31 @@
+.d-f {
+	display: flex;
+}
+
+.row {
+	@extend .d-f;
+	flex-direction: row;
+}
+
+.col {
+	@extend .d-f;
+	flex-direction: column;
+}
+
+@each $i in ('jc', 'ai') {
+	$variants: (
+		'c': center,
+		's': flex-start,
+		'e': flex-end,
+		'fb': first baseline
+	);
+	@each $k, $j in $variants {
+		.#{$i}-#{$k} {
+			@if $i == 'jc' {
+				justify-content: $j;
+			} @else if $i == 'ai' {
+				align-items: $j;
+			}
+		}
+	}
+}
