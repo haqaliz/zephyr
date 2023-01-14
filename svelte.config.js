@@ -34,7 +34,8 @@ const config = {
 			$components: 'src/lib/components',
 			$directives: 'src/directives',
 			$consts: 'src/lib/consts.ts',
-			$api: 'src/lib/api/index.ts'
+			$api: 'src/lib/api/index.ts',
+			$stores: 'src/stores',
 		}
 	},
 

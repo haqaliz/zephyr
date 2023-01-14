@@ -5,10 +5,17 @@
 		password = 'password'
 	}
 	export let type: Type;
+	export let value: String;
 </script>
 
 <!-- Input -->
-<input class="in" {type} {...$$props} />
+{#if type === 'text'}
+	<input class="in" bind:value={value} type="text" {...$$props} />
+{:else if type === 'email'}
+	<input class="in" bind:value={value} type="email" {...$$props} />
+{:else if type === 'password'}
+	<input class="in" bind:value={value} type="password" {...$$props} />
+{/if}
 
 <style lang="scss">
 	.in {

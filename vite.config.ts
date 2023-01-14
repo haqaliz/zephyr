@@ -4,6 +4,13 @@ import type { UserConfig } from 'vite';
 const config: UserConfig = {
 	plugins: [sveltekit()],
 	server: {
+		proxy: {
+			'/local': {
+				target: 'http://localhost:8081',
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/local/, ''),
+			},
+		},
 		port: 8080
 	},
 	preview: {

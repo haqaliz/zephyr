@@ -7,15 +7,27 @@
 		success = 'success'
 	}
 	export let type: Type;
+	export let link: Boolean;
 </script>
 
 <!-- Button -->
-<button class={`btn ${type}`}>
-	<slot />
-</button>
+{#if !link}
+	<button
+		class={`btn ${type}`}
+		{...$$restProps}
+		on:click
+	>
+		<slot />
+	</button>
+{:else}
+	<a class={`btn ${type}`} {...$$restProps}>
+		<slot />
+	</a>
+{/if}
 
 <style lang="scss">
 	.btn {
+		@extend .row, .ai-c, .jc-c;
 		height: $height;
 		padding: 0 1rem;
 		cursor: pointer;
