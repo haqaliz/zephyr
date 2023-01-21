@@ -5,10 +5,10 @@
 	interface Form {
 		email: string;
 		password: string;
-	};
+	}
 	let form: Form = {
 		email: '',
-		password: '',
+		password: ''
 	};
 	const login = async () => {
 		if (!form.email.length || !form.password.length) return;

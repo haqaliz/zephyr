@@ -8,8 +8,8 @@ const config: UserConfig = {
 			'/local': {
 				target: 'http://localhost:8081',
 				changeOrigin: true,
-				rewrite: (path) => path.replace(/^\/local/, ''),
-			},
+				rewrite: (path) => path.replace(/^\/local/, '')
+			}
 		},
 		port: 8080
 	},

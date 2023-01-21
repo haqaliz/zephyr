@@ -12,11 +12,7 @@
 
 <!-- Button -->
 {#if !link}
-	<button
-		class={`btn ${type}`}
-		{...$$restProps}
-		on:click
-	>
+	<button class={`btn ${type}`} {...$$restProps} on:click>
 		<slot />
 	</button>
 {:else}

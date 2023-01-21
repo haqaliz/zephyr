@@ -10,11 +10,11 @@
 
 <!-- Input -->
 {#if type === 'text'}
-	<input class="in" bind:value={value} type="text" {...$$props} />
+	<input class="in" bind:value type="text" {...$$props} />
 {:else if type === 'email'}
-	<input class="in" bind:value={value} type="email" {...$$props} />
+	<input class="in" bind:value type="email" {...$$props} />
 {:else if type === 'password'}
-	<input class="in" bind:value={value} type="password" {...$$props} />
+	<input class="in" bind:value type="password" {...$$props} />
 {/if}
 
 <style lang="scss">

@@ -1,9 +1,19 @@
 <script lang="ts">
 	import { user } from '$stores';
-
-	$: {
-		console.log($user)
-	}
+	import Sidebar from './sidebar.svelte';
 </script>
 
-{$user?.email}
+<div class="container">
+	<Sidebar />
+</div>
+
+<style lang="scss">
+	.container {
+		@extend .row;
+		flex: 1;
+
+		> * {
+			flex: 1;
+		}
+	}
+</style>
