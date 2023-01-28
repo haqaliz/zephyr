@@ -24,8 +24,18 @@
 <!-- Login -->
 <div class="container">
 	<div class="form-group">
-		<Input bind:value={form.email} type="email" placeholder="Email" />
-		<Input bind:value={form.password} type="password" placeholder="Password" />
+		<Input
+			bind:value={form.email}
+			type="email"
+			label="Email"
+			placeholder="Enter your email"
+		/>
+		<Input
+			bind:value={form.password}
+			type="password"
+			label="Password"
+			placeholder="Enter your password"
+		/>
 		<Button type="primary" on:click={login}>Login</Button>
 	</div>
 </div>

@@ -11,7 +11,7 @@
 	let loading = false;
 
 	const publicPages = ['login', 'signup'];
-	const privatePages = ['profile'];
+	const privatePages = ['profile', 'workspace'];
 	const pages = {
 		public: new RegExp(`^/(${publicPages.join('|')})`, 'i'),
 		private: new RegExp(`^/(${privatePages.join('|')})$`, 'i')

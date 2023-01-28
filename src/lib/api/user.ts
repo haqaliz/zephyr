@@ -9,6 +9,16 @@ export const current = async () => {
 	return r.json();
 };
 
+export const services = async () => {
+	const r = await fetch(`${API_BASE_URL}/user/services`, {
+		...REQ_OPTIONS,
+		method: 'GET'
+	}).catch((e) => e.response);
+	if (!r?.ok) return;
+	return r.json();
+};
+
 export default {
-	current
+	current,
+  services,
 };
